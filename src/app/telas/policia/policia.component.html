@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="input-wrap">
+            <label for="marcar-achado">Imei do dispositivo encontrado</label>
+            <input id="marcar-achado" name="marcar-achado"  placeholder="Insira o Imei" type="text" [(ngModel)]="phone.imei" required>
+        </div>
+        <button type="submit" [disabled]="form.form.invalid">OK</button>
+    </form>
+</div>
