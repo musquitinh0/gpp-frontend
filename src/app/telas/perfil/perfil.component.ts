@@ -15,9 +15,22 @@ export class PerfilComponent {
     {model: ' '}
   ]
 
+  phone1 = {
+    model: '',
+    imei: '',
+    number1: ''
+  }
+
+  modal = false;
+
   constructor(
     private geralService: GeralService
   ) { }
+
+  ativaModal(phone:any){
+    this.phone1 = phone;
+    this.modal = true;
+  }
 
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
@@ -30,10 +43,21 @@ export class PerfilComponent {
     try {
       const result = await this.geralService.removePhone(phone);
       alert("telefone removido com sucesso");
+      this.modal = false;
       location.reload();
     } catch (error) {
       console.log(error);
     }
   }
 
+  async marcaPerdido(phone:any){
+    try {
+      const result = await this.geralService.phoneLost(phone);
+      alert("telefone marcado como perdido");
+      this.modal = false;
+      location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
