@@ -28,15 +28,28 @@ export class CreateAccountComponent implements OnInit {
   }
 
   async onSubmit() {
-    try {
-      const result = await this.accountService.createAccount(this.user);
-      this.modal=true;
-      window.scrollTo(0, 0);
+    //todo: funções para avaliar de verdade
+    if(this.user.address.length < 5){
+      alert("Endereço inválido");
+    }else if(this.user.cpf.length != 11){
+      alert("cpf inválido");
+    }else if(this.user.email.length < 5){
+      alert("email invalido");
+    }else if(this.user.full_name.length < 5){
+      alert("nome invalido");
+    }else if(this.user.password.length < 8){
+      alert("senha inválida");
+    }else{
+      try {
+        const result = await this.accountService.createAccount(this.user);
+        this.modal=true;
+        window.scrollTo(0, 0);
 
-      console.log(result);
-    } catch (error) {
-      alert(error);
-      console.error(error);
+        console.log(result);
+      } catch (error) {
+        alert(error);
+        console.error(error);
+      }
     }
   }
 
