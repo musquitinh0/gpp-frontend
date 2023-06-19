@@ -33,3 +33,10 @@
       <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center">
     </div>
   </div>
+  <div class = "modal-confirmacao" *ngIf="modal">
+    <h3>Sua conta ainda não foi confirmada, por favor insira o códio que eviamos para o seu email {{login.email}}</h3>
+    <form class="form-confirmacao" #form="ngForm" (submit)="confirma()">
+      <input id="confirmation" name="confirmation" placeholder="Insira o código" type="text" [(ngModel)]="login.confirmation_code" required>
+      <button type="submit" [disabled]="form.form.invalid">Enviar</button>
+    </form>
+  </div>

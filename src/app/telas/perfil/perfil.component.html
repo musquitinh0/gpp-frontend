@@ -1,40 +1,40 @@
-<div class="profile-page">
-    <div class="profile-header">
-        <img src="https://img.freepik.com/free-icon/user_318-159711.jpg">
-        <div class="lateral-perfil">
-            <h2>{{user.full_name}}</h2>
-            <a href="/edit-perfil">
-                <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
-            </a>
-        </div>  
-    </div>
-    <div class="dispositivos">
-        <h4>dispositivos:</h4>
-        <div *ngIf=" user.phones.length == 0" class="alerta-no-phone">
-            <h5> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<body>
+    <div class="profile-card">
+        <div class="upper">
+            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120349559151919174/arrow-back-regular-24.png" (click)="logout()">
+            <h2>Perfil</h2>
+            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120350770445947010/bell-regular-24.png">
         </div>
-        <ul class="list-group" *ngIf=" user.phones.length> 0">
-            <li *ngFor="let phone of phones" (click)="ativaModal(phone)">
-                <h4 style="width: 90%;">{{phone.model}}</h4>
+        <div class="image">
+            <img class="profile-img" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
+        </div>
+        <button class="edit-profile-btn" [routerLink]="['/edit-perfil']" >Editar Perfil</button>
+    </div>
+    <div class="meio">
+        <h3>Dispositivos:</h3>
+    </div>
+    <div class="phones-content">
+        <h5 *ngIf="user.phones.length== 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
+        <ul *ngIf="user.phones.length> 0" style="width: 100%;">
+            <li *ngFor="let phone of phones" (click)="ativaModal(phone)" class="Dispositivos-container">
+                <h4>{{phone.model}}</h4>
+                <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120354673082245171/chevron-right-regular-24.png">
             </li>
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
     </div>
-    <div style="display: flex; flex-direction: column; width: 90%; margin-top: 5%;">
-        <h5 style="color: rgb(73, 73, 73);
-        align-self: flex-start;
-        margin: 0;" > Minha conta</h5>
-        <a href="/login" style="margin-bottom: 0;"><h5 > Mudar para outra conta</h5></a>
-        <a href="/home-screen" style="margin-top: 0;"><h5>Sair</h5></a>
-    </div>
-</div>
+</body>
 
 <div class="modal-dispositivo" *ngIf="modal">
+    <button (click)="desativaModal()" style="align-self: flex-end; width: 5%; background-color: rgb(255, 0, 0); border: none
+    ; border-radius: 5px;">x</button>
     <h1>{{phone1.model}}</h1>
-    <h2>Numero do telefone: {{phone1.number1}}</h2>
-    <h2>Imei do telefone: {{phone1.imei}}</h2>
+    <h2>Numero: {{phone1.number1}}</h2>
+    <h2>Imei: {{phone1.imei}}</h2>
     <div class="buttons">
-        <button (click)="remove(phone1)">Remover dispositivo</button>
+        <button (click)="remove(phone1)" style="background-color: rgb(255, 98, 98);">Remover dispositivo</button>
         <button (click)="marcaPerdido(phone1)">Dispositivo perdido</button>
     </div>
 </div>
+

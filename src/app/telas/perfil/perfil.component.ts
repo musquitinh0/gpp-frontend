@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GeralService } from '../commom/geral.service';
 import { Profile } from './perfil';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -24,12 +25,21 @@ export class PerfilComponent {
   modal = false;
 
   constructor(
-    private geralService: GeralService
+    private geralService: GeralService,
+    private router: Router
   ) { }
+
+  logout(){
+    this.router.navigate(['/login']);
+  }
 
   ativaModal(phone:any){
     this.phone1 = phone;
     this.modal = true;
+  }
+
+  desativaModal(){
+    this.modal = false;
   }
 
   ngOnInit() {

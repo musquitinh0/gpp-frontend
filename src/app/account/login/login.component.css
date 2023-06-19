@@ -108,3 +108,40 @@ img{
 .line{
     display: flex;
 }
+
+.modal-confirmacao{
+    display: flex;
+    transform: translate(-50%, -50%);
+    background-color: rgb(179, 179, 179);
+    position: absolute;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border-radius: 15px;
+    left: 50%;
+    top: 50%;
+    padding: 5%;
+    width: 70%;
+    box-shadow: 0 2px 8px #333;
+}
+
+.form-confirmacao > input {
+    width: 100%;
+    height: 65px;
+    border-style:ridge;
+    border-color:rgba(240, 255, 255, 0.479) ;
+    border-radius: 10px;
+    font-size: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-confirmacao > button{
+    margin-top: 7%;
+    background-color: rgba(98, 151, 255, 1);
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+}
