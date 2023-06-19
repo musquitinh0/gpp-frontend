@@ -27,6 +27,10 @@ export class AccountService {
 
   async confirmAccount (account: any){
     const result = await this.http.post<any>(`${environment.api}/confirm`, account).toPromise();
+    if (result && result.access_token) {
+      window.localStorage.setItem('token', result.access_token);
+      return true;
+    }
     return result;
   }
 

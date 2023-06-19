@@ -14,12 +14,8 @@
             <h5> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         </div>
         <ul class="list-group" *ngIf=" user.phones.length> 0">
-            <li *ngFor="let phone in user.phones">
-                <h5 style="width: 90%;">{{phone.modelo}}</h5>
-                <!--
-                <button>v</button>
-                <button>x</button>
-                -->
+            <li *ngFor="let phone of phones" (click)="ativaModal(phone)">
+                <h4 style="width: 90%;">{{phone.model}}</h4>
             </li>
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
@@ -30,5 +26,15 @@
         margin: 0;" > Minha conta</h5>
         <a href="/login" style="margin-bottom: 0;"><h5 > Mudar para outra conta</h5></a>
         <a href="/home-screen" style="margin-top: 0;"><h5>Sair</h5></a>
+    </div>
+</div>
+
+<div class="modal-dispositivo" *ngIf="modal">
+    <h1>{{phone1.model}}</h1>
+    <h2>Numero do telefone: {{phone1.number1}}</h2>
+    <h2>Imei do telefone: {{phone1.imei}}</h2>
+    <div class="buttons">
+        <button (click)="remove(phone1)">Remover dispositivo</button>
+        <button (click)="marcaPerdido(phone1)">Dispositivo perdido</button>
     </div>
 </div>

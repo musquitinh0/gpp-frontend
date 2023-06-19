@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,22 +20,36 @@ export class CreateAccountComponent implements OnInit {
   modal = false;
 
   constructor(
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   async onSubmit() {
-    try {
-      const result = await this.accountService.createAccount(this.user);
-      this.modal=true;
-      window.scrollTo(0, 0);
+    //todo: funções para avaliar de verdade
+    if(this.user.address.length < 5){
+      alert("Endereço inválido");
+    }else if(this.user.cpf.length != 11){
+      alert("cpf inválido");
+    }else if(this.user.email.length < 5){
+      alert("email invalido");
+    }else if(this.user.full_name.length < 5){
+      alert("nome invalido");
+    }else if(this.user.password.length < 8){
+      alert("senha inválida");
+    }else{
+      try {
+        const result = await this.accountService.createAccount(this.user);
+        this.modal=true;
+        window.scrollTo(0, 0);
 
-      console.log(result);
-    } catch (error) {
-      alert(error);
-      console.error(error);
+        console.log(result);
+      } catch (error) {
+        alert(error);
+        console.error(error);
+      }
     }
   }
 
@@ -43,6 +58,7 @@ export class CreateAccountComponent implements OnInit {
         const result = await this.accountService.confirmAccount(this.user);
         alert('Conta criada com sucesso!');
         console.log(result);
+        this.router.navigate(['/perfil']);
     }catch(error){
       console.log(error);
     }
