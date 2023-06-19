@@ -11,8 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   login = {
     email: '',
-    password: ''
+    password: '',
+    confirmation_code: ''
+
   };
+
+  modal = false;
 
   constructor(
     private accountService: AccountService,
@@ -29,13 +33,32 @@ export class LoginComponent implements OnInit {
         console.log(`Login efetuado: ${result}`);
 
         // navego para a rota vazia novamente
+        console.log(result);
         this.router.navigate(['/perfil']);
-      } catch (error) {
-        alert('Email ou senha incorretos');
+      } catch (error:any) {
+        const tipoError = await error.error;
+        
+        if(tipoError == 'user not confirmed'){
+          this.modal = true;
+        }else{
+          alert(tipoError);
+        }
+        
         console.error(error);
       }
     }else{
       this.router.navigate(['/policia']);
+    }
+  }
+
+  async confirma(){
+    try{
+        const result = await this.accountService.confirmAccount(this.login);
+        alert('Conta confirmada com sucesso!');
+        console.log(result);
+        this.router.navigate(['/perfil']);
+    }catch(error){
+      console.log(error);
     }
   }
 }

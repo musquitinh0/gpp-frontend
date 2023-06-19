@@ -39,6 +39,6 @@ export class AuthInterceptor implements HttpInterceptor {
         `Erro: ${JSON.stringify(error.error)}`);
     }
 
-    return throwError('Ocorreu um erro, tente novamente');
+    return throwError(error.error);
   }
 }
