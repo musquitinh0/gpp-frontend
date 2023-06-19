@@ -14,12 +14,8 @@
             <h5> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         </div>
         <ul class="list-group" *ngIf=" user.phones.length> 0">
-            <li *ngFor="let phone in user.phones">
-                <h5 style="width: 90%;">{{phone.modelo}}</h5>
-                <!--
-                <button>v</button>
-                <button>x</button>
-                -->
+            <li *ngFor="let phone of phones">
+                <h4 style="width: 90%;">{{phone.model}}</h4>
             </li>
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>

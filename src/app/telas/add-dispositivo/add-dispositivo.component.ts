@@ -9,9 +9,9 @@ import { GeralService } from '../commom/geral.service';
 })
 export class AddDispositivoComponent {
   phone = {
-    modelo: '',
+    model: '',
     number1: '',
-    number2: '1241241',
+    number2: '',
     imei: ''
   }
   constructor(
@@ -20,8 +20,9 @@ export class AddDispositivoComponent {
 
   async onSubmit() {
     try {
+      this.phone.number2 = this.phone.number1;
       const result = await this.geralService.addPhone(this.phone);
-
+      
       alert("Telefone cadastrado com sucesso");
       console.log(result);
     } catch (error) {

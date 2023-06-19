@@ -11,6 +11,10 @@ export class PerfilComponent {
   
   user: Profile = new Profile();
 
+  phones =[
+    {model: ' '}
+  ]
+
   constructor(
     private geralService: GeralService
   ) { }
@@ -18,7 +22,7 @@ export class PerfilComponent {
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
       this.user = profile;
-      console.log(this.user.phones);
+      this.phones = this.user.phones;
     });
 
 
