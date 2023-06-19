@@ -26,6 +26,11 @@ export class GeralService {
     return result;
   }
 
+  async removePhone(phone: any) {
+    const result = await this.http.post<any>(`${environment.api}/remove/phone`, phone).toPromise();
+    return result;
+  }
+
 
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);

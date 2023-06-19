@@ -24,8 +24,16 @@ export class PerfilComponent {
       this.user = profile;
       this.phones = this.user.phones;
     });
+  }
 
-
+  async remove(phone:any){
+    try {
+      const result = await this.geralService.removePhone(phone);
+      alert("telefone removido com sucesso");
+      location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }

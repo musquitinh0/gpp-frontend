@@ -16,6 +16,8 @@
         <ul class="list-group" *ngIf=" user.phones.length> 0">
             <li *ngFor="let phone of phones">
                 <h4 style="width: 90%;">{{phone.model}}</h4>
+                <button (click)="remove(phone)">x</button>
+                <button>v</button>
             </li>
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
