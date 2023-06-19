@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,7 +20,8 @@ export class CreateAccountComponent implements OnInit {
   modal = false;
 
   constructor(
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -43,6 +45,7 @@ export class CreateAccountComponent implements OnInit {
         const result = await this.accountService.confirmAccount(this.user);
         alert('Conta criada com sucesso!');
         console.log(result);
+        this.router.navigate(['/perfil']);
     }catch(error){
       console.log(error);
     }
