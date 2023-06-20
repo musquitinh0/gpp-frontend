@@ -46,6 +46,9 @@ export class PerfilComponent {
     this.geralService.getPerfil().subscribe(profile => {
       this.user = profile;
       this.phones = this.user.phones;
+      if(profile.isPolicia){
+        this.router.navigate(['/policia']);
+      }
     });
   }
 

@@ -14,10 +14,6 @@ import { authPoliciaGuard } from './account/shared/auth-policia.guard';
 
 const routes: Routes = [
   {
-    path: 'policia',
-    component: PoliciaComponent
-  },
-  {
     path: '',
     component: HomeComponent,
     children:[
@@ -30,12 +26,16 @@ const routes: Routes = [
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo: 'home-screen', pathMatch: 'full' },
+      { path: '', redirectTo: 'home-screen', pathMatch: "full" },
       { path: 'home-screen', component: HomeScreenComponent},
       { path: 'login', component: LoginComponent },
       { path: 'create-account', component: CreateAccountComponent },
       { path: 'adicionar-dispositivo', component: AddDispositivoComponent}
     ]
+  },
+  {
+    path: 'policia',
+    component: PoliciaComponent
   }
 ];
 
