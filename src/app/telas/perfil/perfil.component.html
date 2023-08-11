@@ -14,7 +14,7 @@
     <div class="meio">
         <h3>Dispositivos:</h3>
     </div>
-    <div class="phones-content">
+    <div class="phones-content"> 
         <h5 *ngIf="user.phones.length== 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         <ul *ngIf="user.phones.length> 0" style="width: 100%;">
             <li *ngFor="let phone of phones" (click)="ativaModal(phone)" class="Dispositivos-container">
