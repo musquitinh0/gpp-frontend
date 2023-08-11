@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    if(this.login.email != "policia@delegacia.com"){
       try {
         const result = await this.accountService.login(this.login);
         console.log(`Login efetuado: ${result}`);
@@ -46,9 +45,7 @@ export class LoginComponent implements OnInit {
         
         console.error(error);
       }
-    }else{
-      this.router.navigate(['/policia']);
-    }
+    
   }
 
   async confirma(){

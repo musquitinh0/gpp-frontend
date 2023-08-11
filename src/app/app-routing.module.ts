@@ -10,33 +10,35 @@ import { PerfilComponent } from './telas/perfil/perfil.component';
 import { EditPerfilComponent } from './telas/edit-perfil/edit-perfil.component';
 import { AddDispositivoComponent } from './telas/add-dispositivo/add-dispositivo.component';
 import { PoliciaComponent } from './telas/policia/policia.component';
-import { authPoliciaGuard } from './account/shared/auth-policia.guard';
 
 const routes: Routes = [
   {
     path: 'policia',
     component: PoliciaComponent
   },
+  { path: '', redirectTo: 'home-screen', pathMatch: 'full' },
   {
     path: '',
     component: HomeComponent,
     children:[
       {path: 'perfil', component: PerfilComponent},
-      {path: 'edit-perfil', component: EditPerfilComponent}
+      {path: 'edit-perfil', component: EditPerfilComponent},
+      { path: 'adicionar-dispositivo', component: AddDispositivoComponent}
     ],
     canActivate: [AuthGuard]
   },
+  
   {
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo: 'home-screen', pathMatch: 'full' },
       { path: 'home-screen', component: HomeScreenComponent},
       { path: 'login', component: LoginComponent },
       { path: 'create-account', component: CreateAccountComponent },
-      { path: 'adicionar-dispositivo', component: AddDispositivoComponent}
+      { path: 'adicionar-dispositivo', component: AddDispositivoComponent},
     ]
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

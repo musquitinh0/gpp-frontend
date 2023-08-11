@@ -1,9 +1,36 @@
-<div class="wrapper">
-    <form (ngSubmit)="onSubmit()" #form="ngForm">
-        <div class="input-wrap">
-            <label for="marcar-achado">Imei do dispositivo encontrado</label>
-            <input id="marcar-achado" name="marcar-achado"  placeholder="Insira o Imei" type="text" [(ngModel)]="phone.imei" required>
+<body>
+    <div class="profile-card">
+        <div class="upper">
+            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120349559151919174/arrow-back-regular-24.png" (click)="logout()">
+            <h2>Página da Policia</h2>
+            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120350770445947010/bell-regular-24.png">
         </div>
-        <button type="submit" [disabled]="form.form.invalid">OK</button>
-    </form>
-</div>
+        <div class="image">
+            <img class="profile-img" src="https://i.imgur.com/8SdfQ9M.jpeg">
+        </div>
+    </div>
+    <div class="meio" style="margin-bottom: 2%; margin-top: 5%;">
+        <h3>Marcar dispositivo encontrado</h3>
+    </div>
+    <div class="phones-content" style="margin: 2%;">
+        <form (ngSubmit)="onSubmit()" #form="ngForm" class="input-form">
+            <div class="input-wrap">
+                <label for="marcar-achado">Imei do dispositivo encontrado</label>
+                <input id="marcar-achado" name="marcar-achado"  placeholder="Insira o Imei" type="text" [(ngModel)]="phone.imei" required>
+            </div>
+            <button type="submit" [disabled]="form.form.invalid" style="color: black;">OK</button>
+        </form>
+    </div>
+    <div class="meio" style="margin-bottom: 2%; margin-top: 5%;">
+        <h3>Dispositivos Perdidos:</h3>
+    </div>
+    <div class="phones-content">
+        <h5 *ngIf="phones.length== 0"> Nenhum dispositivo Perdido!</h5>
+        <ul *ngIf="phones.length> 0" style="width: 100%;">
+            <li *ngFor="let phone of phones" class="Dispositivos-container">
+                <h4>{{phone.model}}</h4>
+                <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120354673082245171/chevron-right-regular-24.png">
+            </li>
+        </ul>
+    </div>
+</body>

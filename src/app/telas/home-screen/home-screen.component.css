@@ -1,43 +1,153 @@
-.home-screen-container{
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    height: 100vh;
+.html{
+    margin: 0%;
+    padding: 0%;
+}
+
+.home-screen > *{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: rgba(0, 112, 192, 1);
+    height: 10vh;
     width: 100vw;
 }
 
-.home-screen-container > *{
+.home-screen{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.image-header {
-    margin: 2%;
+.left{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 60%;
+    justify-content: flex-start;
+}
+
+.left > img{
+    width: 80%;
+}
+
+.line{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    height: 30%;
 }
 
-.texts{
+.line > h1{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'MyFont';
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.right{
+    align-items: center;
     display: flex;
-    height: 40%;
-    width: 80%;
-    align-self: center;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+
+.infos{
+    padding: 0;
+    height: auto;
+    display: flex;
+    width: 90%;
+    border-radius: 15px;
+    background-color: rgba(255, 220, 99, 1);
+    align-items: center;
+    margin: 2%;
+    padding-right: 2%;
+}
+
+.infos > img{
+    height: 50px;
+    margin: 2%;
 }
 
 .buttons{
+    margin: 2%;
     display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 80%;
+    height: 6%;
+    width: 90%;
     justify-content: center;
-    align-self: center;
+    align-items: center;
 }
 
-.buttons > button{
+.register-btt{
     margin: 2%;
-    padding: 2%;
+    height: 100%;
+    width: 30%;
     border: none;
-    border-radius: 10px;
-    background-color: rgba(98, 151, 255, 1);
+    border-radius: 8px;
+    background-color: rgba(0, 112, 192, 1);
+    color: white;
+}
+
+.login-btt{
+    margin: 2%;
+    border-style: solid;
+    background-color: white;
+    border-color: rgba(0, 112, 192, 1);
+    border-radius: 8px;
+    height: 100%;
+    width: 30%;
+    border-width: 6px;
+}
+
+@media screen and (max-width: 800px){
+    .home-screen{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header{
+        height: 5vh;
+    }
+
+    .right{
+        width: 100%;
+        margin-top: 2%;
+    }
+    .left{
+        width: 100%;
+    }
+
+    .line > h1{
+        font-size: 30px;
+    }
+
+    .infos > h2{
+        font-size: 15px;
+    }
+
+    .infos > img{
+        height: 25px;
+    }
+
+    .register-btt{
+        width: 40%;
+        height: 100%;
+    }
+
+    .login-btt{
+        width: 40%;
+        height: 100%;
+    }
+
+    .buttons{
+        height: 10%;
+        margin-top: 4%;
+    }
+
 }

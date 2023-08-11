@@ -1,13 +1,17 @@
-<div class="login-container">
-  <div class="login-header">
-    <div class="backbutton">
-      <a href="/home-screen"><img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-gauche-noir.png" ></a>
+<div class="header"></div>
+<div class="Registrar-screen">
+  <div class="left">
+    <img src="/assets/Logo.png" alt="Logo GPP">
+    <div class="line">
+        <h1 style="color: rgba(0, 112, 192, 1);">G</h1><h1>uardinha do</h1>
     </div>
-    <img src="https://i.imgur.com/8SdfQ9M.jpeg" title="logo do gpp">
-    <div class="backbutton"></div>
+    <div class="line">
+        <h1 style="color: rgba(255, 220, 99, 1);">P</h1><h1>arque</h1><h1 style="padding-left: 10px;">do</h1><h1 style="color: rgba(255, 220, 99, 1); padding-left: 10px;">P</h1><h1>ovo</h1>
+    </div>
   </div>
-        
-    <form class="texts" (ngSubmit)="onSubmit()" #form="ngForm">
+
+  <div class="right">
+    <form class="Registrar-box" (ngSubmit)="onSubmit()" #form="ngForm">
       <h1>Registrar</h1>
       <div class="text-box">
         <label for="email">Email</label>
@@ -35,17 +39,21 @@
       </div>
       <div class="text-box">
         <label for="senhaR">Repita a Senha</label>
-        <input id= "senhaR" name = "senhaR" placeholder="Insira a sua senha" required type="password" [(ngModel)]="user.password">
+        <input id= "senhaR" name = "senhaR" placeholder="Insira a sua senha" required type="password" [(ngModel)]="passwordConfirm">
       </div>
+
       <button type="submit" [disabled]="form.form.invalid">Registrar</button>
+
+      <div class="Registrar-foot">
+        Já possui uma conta? <a href="/login">Fazer Login</a>
+      </div>
+      <!--<div class="line">
+        <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center">
+      </div>-->
     </form>
-    <div class="login-foot">
-      Já possui uma conta? <a href="/login">Fazer Login</a>
-    </div>
-    <div class="line">
-      <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center">
-    </div>
   </div>
+</div>
+
 <div class = "modal-confirmacao" *ngIf="modal">
   <h3>Insira o código que enviamos para {{user.email}}</h3>
   <form class="form-confirmacao" #form="ngForm" (submit)="confirma()">
@@ -53,3 +61,4 @@
     <button type="submit" [disabled]="form.form.invalid">Enviar</button>
   </form>
 </div>
+

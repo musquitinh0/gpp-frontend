@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <body>
     <div class="profile-card">
         <div class="upper">
@@ -9,12 +8,13 @@
         <div class="image">
             <img class="profile-img" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
         </div>
+        <h3 style="color: black; margin-top: 2%;">{{user.full_name}}</h3>
         <button class="edit-profile-btn" [routerLink]="['/edit-perfil']" >Editar Perfil</button>
     </div>
     <div class="meio">
         <h3>Dispositivos:</h3>
     </div>
-    <div class="phones-content">
+    <div class="phones-content"> 
         <h5 *ngIf="user.phones.length== 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         <ul *ngIf="user.phones.length> 0" style="width: 100%;">
             <li *ngFor="let phone of phones" (click)="ativaModal(phone)" class="Dispositivos-container">
