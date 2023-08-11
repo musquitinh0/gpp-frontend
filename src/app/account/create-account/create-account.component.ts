@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
 
+//todo: cpf bonitinho
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -18,6 +19,7 @@ export class CreateAccountComponent implements OnInit {
     confirmation_code: ''
   };
   modal = false;
+  passwordConfirm = '';
 
   constructor(
     private accountService: AccountService,
@@ -38,7 +40,9 @@ export class CreateAccountComponent implements OnInit {
     }else if(this.user.full_name.length < 5){
       alert("nome invalido");
     }else if(this.user.password.length < 8){
-      alert("senha inválida");
+      alert("senha muito curta!");
+    }else if(this.user.password != this.passwordConfirm){
+      alert("as senhas não coincidem!");
     }else{
       try {
         const result = await this.accountService.createAccount(this.user);
