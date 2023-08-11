@@ -106,3 +106,49 @@
     border-width: 6px;
 }
 
+@media screen and (max-width: 800px){
+    .home-screen{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header{
+        height: 5vh;
+    }
+
+    .right{
+        width: 100%;
+        margin-top: 2%;
+    }
+    .left{
+        width: 100%;
+    }
+
+    .line > h1{
+        font-size: 30px;
+    }
+
+    .infos > h2{
+        font-size: 15px;
+    }
+
+    .infos > img{
+        height: 25px;
+    }
+
+    .register-btt{
+        width: 40%;
+        height: 100%;
+    }
+
+    .login-btt{
+        width: 40%;
+        height: 100%;
+    }
+
+    .buttons{
+        height: 10%;
+        margin-top: 4%;
+    }
+
+}
