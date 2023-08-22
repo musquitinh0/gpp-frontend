@@ -15,7 +15,7 @@ body{
 }
 
 .profile-card{
-    width: 100%;
+    width: 95%;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -85,12 +85,12 @@ body{
 
 .meio{
     justify-content: flex-start;
-    width: 100%;
+    width: 95%;
     padding-left: 5%
 }
 
 .phones-content{
-    width: 100%;
+    width: 95%;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -123,7 +123,7 @@ body{
 .modal-dispositivo{
     display: flex;
     transform: translate(-50%, -50%);
-    background-color: rgb(179, 179, 179);
+    background-color: white;
     position: absolute;
     z-index: 5;
     flex-direction: column;
@@ -132,11 +132,24 @@ body{
     border-radius: 15px;
     left: 50%;
     top: 50%;
-    padding: 5%;
-    width: 80%;
+    padding: 2%;
+    width: 90%;
     box-shadow: 0 2px 8px #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.modal-dispositivo > h1{
+    margin: 2%;
+    margin-bottom: 5%;
+}
+
+.modal-dispositivo > h2{
+    align-self: left;
+    margin: 2%;
+}
+
 .buttons{
+    margin-top: 2%;
     display: flex;
 }
 .buttons > button{

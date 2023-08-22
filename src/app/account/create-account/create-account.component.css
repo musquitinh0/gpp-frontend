@@ -7,6 +7,22 @@
     background-color: rgba(0, 112, 192, 1);
     height: 10vh;
     width: 100vw;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+}
+
+.header > a{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 2%;
+}
+
+.header > a > img{
+    height: 60%;
+    filter: invert(100%);
 }
 
 .Registrar-screen{
@@ -45,8 +61,9 @@
     padding: 0%;
     margin: 0%;
     font-family: 'MyFont';
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bold;
+    letter-spacing: -1px;
 }
 
 .right{
@@ -105,6 +122,60 @@
     margin-bottom: 1%;
 }
 
+.Registrar-box > button:hover{
+    background-color: rgba(255, 220, 99, .7);
+    cursor: pointer;
+}
+
+.Registrar-foot{
+    margin: 2%;
+}
+
+.modal-confirmacao{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border-radius: 15px;
+    left: 50%;
+    top: 50%;
+    width: 25%;
+    padding: 2%;
+    box-shadow: 0 2px 8px #333;
+}
+
+.form-confirmacao{
+    width: 100%;
+}
+
+.form-confirmacao > input {
+    width: 100%;
+    height: 65px;
+    border-style:ridge;
+    border-color:rgba(240, 255, 255, 0.479) ;
+    border-radius: 10px;
+    font-size: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-confirmacao > button{
+    margin-top: 7%;
+    background-color: rgba(98, 151, 255, 1);
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+}
+
+.form-confirmacao > button:hover{
+    background-color: rgba(98, 151, 255, .7);
+}
 
 @media screen and (max-width: 800px){
     .Registrar-screen{
@@ -127,17 +198,25 @@
     }
 
     .line > h1{
-        font-size: 30px;
+        font-size: 0;
     }
 
     .Registrar-box{
         width: 100%;
         margin: 2%;
         background-color: white;
+        box-shadow: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .Registrar-box > h1{
+        margin: 0;
     }
 
     .Registrar-box > button{
         margin-top: 7%;
+        margin-bottom: 5%;
     }
 
     .text-box{
@@ -149,41 +228,10 @@
         width: 95%;
         font-size: 80%;
     }
+
+    .modal-confirmacao{
+        width: 80%;
+        padding: 5%;
+    }
 }
 
-.modal-confirmacao{
-    display: flex;
-    transform: translate(-50%, -50%);
-    background-color: rgb(179, 179, 179);
-    position: absolute;
-    z-index: 5;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    border-radius: 15px;
-    left: 50%;
-    top: 50%;
-    padding: 5%;
-    width: 70%;
-    box-shadow: 0 2px 8px #333;
-}
-
-.form-confirmacao > input {
-    width: 100%;
-    height: 65px;
-    border-style:ridge;
-    border-color:rgba(240, 255, 255, 0.479) ;
-    border-radius: 10px;
-    font-size: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.form-confirmacao > button{
-    margin-top: 7%;
-    background-color: rgba(98, 151, 255, 1);
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    height: 50px;
-}

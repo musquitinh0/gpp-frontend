@@ -36,6 +36,13 @@ export class GeralService {
     return result;
   }
 
+  async phoneBO(phone: any) {
+    const result = await this.http.post<any>(`${environment.api}/Phone/BO`, phone).toPromise();
+    return result;
+  }
+
+
+
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);
   }

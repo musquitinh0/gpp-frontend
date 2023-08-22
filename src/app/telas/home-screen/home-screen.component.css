@@ -26,8 +26,10 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 60%;
-    justify-content: flex-start;
+    width: 50%;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
 }
 
 .left > img{
@@ -46,8 +48,9 @@
     padding: 0%;
     margin: 0%;
     font-family: 'MyFont';
-    font-size: 50px;
+    font-size: 80px;
     font-weight: bold;
+    letter-spacing: -1px;
 }
 
 .right{
@@ -59,19 +62,35 @@
 }
 
 .infos{
-    padding: 0;
-    height: auto;
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 90%;
+    margin: 2%;
+}
+
+.infos > h2{
+    padding-left: 2%;
+    margin: 0;
+    width: 85%;
+}
+
+.icon-container{
+    padding: 0;
+    margin: 0;
+    height: 60px;
+    display: flex;
+    width: 60px;
     border-radius: 15px;
     background-color: rgba(255, 220, 99, 1);
     align-items: center;
-    margin: 2%;
-    padding-right: 2%;
+    justify-content: center;
+
 }
 
-.infos > img{
+.icon-container > img{
     height: 50px;
+    width: 50px;
     margin: 2%;
 }
 
@@ -89,9 +108,14 @@
     height: 100%;
     width: 30%;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: rgba(0, 112, 192, 1);
     color: white;
+}
+
+.register-btt:hover{
+    background-color: rgba(0, 112, 192, .7);
+    cursor: pointer;
 }
 
 .login-btt{
@@ -99,10 +123,16 @@
     border-style: solid;
     background-color: white;
     border-color: rgba(0, 112, 192, 1);
-    border-radius: 8px;
+    border-radius: 12px;
     height: 100%;
     width: 30%;
     border-width: 6px;
+}
+
+.login-btt:hover{
+    background-color: rgba(0, 112, 192, .1);;
+    border-color: rgba(0, 112, 192, .7);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px){

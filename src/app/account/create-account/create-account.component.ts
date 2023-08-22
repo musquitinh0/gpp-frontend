@@ -37,8 +37,6 @@ export class CreateAccountComponent implements OnInit {
       alert("cpf inválido");
     }else if(this.user.email.length < 5){
       alert("email invalido");
-    }else if(this.user.full_name.length < 5){
-      alert("nome invalido");
     }else if(this.user.password.length < 8){
       alert("senha muito curta!");
     }else if(this.user.password != this.passwordConfirm){

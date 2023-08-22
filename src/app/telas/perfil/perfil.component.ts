@@ -16,13 +16,19 @@ export class PerfilComponent {
     {model: ' '}
   ]
 
+  lostPhones = [
+    {model: ' '}
+  ]
+
   phone1 = {
     model: '',
     imei: '',
-    number1: ''
+    number1: '',
+    BOfeito: ''
   }
 
   modal = false;
+  modalBO = false;
 
   constructor(
     private geralService: GeralService,
@@ -38,16 +44,28 @@ export class PerfilComponent {
     this.modal = true;
   }
 
-  desativaModal(){
-    this.modal = false;
+  ativaModalBO(phone:any){
+    this.phone1 = phone;
+    this.modalBO = true;
   }
+
+  desativaModal(){
+    if(this.modal)
+      this.modal = false;
+      if(this.modalBO)
+      this.modalBO = false;
+  }
+
+  
 
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
-      this.user = profile;
-      this.phones = this.user.phones;
       if(profile.isPolicia){
         this.router.navigate(['/policia']);
+      }else{
+        this.user = profile;
+        this.phones = this.user.phones;
+        this.lostPhones = this.user.lostPhones;
       }
     });
   }
@@ -60,6 +78,17 @@ export class PerfilComponent {
       location.reload();
     } catch (error) {
       console.log(error);
+      alert(error);
+    }
+  }
+
+  async fazBO(phone:any){
+    try{
+      const result = await this.geralService.phoneBO(phone);
+      this.modalBO = false;
+    } catch(error){
+      console.log(error);
+      alert(error);
     }
   }
 
@@ -71,6 +100,7 @@ export class PerfilComponent {
       location.reload();
     } catch (error) {
       console.log(error);
+      alert(error);
     }
   }
 }

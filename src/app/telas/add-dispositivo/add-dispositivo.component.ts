@@ -24,11 +24,20 @@ export class AddDispositivoComponent {
   async onSubmit() {
     try {
       this.phone.number2 = this.phone.number1;
-      const result = await this.geralService.addPhone(this.phone);
-      
-      alert("Telefone cadastrado com sucesso");
-      this.router.navigate(['/perfil']);
-      console.log(result);
+      //todo: fazer verificacoes de verdade
+      if(this.phone.model.length < 5){
+        alert("Dispositivo inválido")
+      } else if(this.phone.number1.length != 11){
+        alert("número inválido");
+      } else if(this.phone.imei.length != 15){
+        alert("IMEI inválido");
+      }
+      else{
+        const result = await this.geralService.addPhone(this.phone);
+        alert("Telefone cadastrado com sucesso");
+        this.router.navigate(['/perfil']);
+        console.log(result);
+      }
     } catch (error) {
       console.error(error);
     }

@@ -1,4 +1,8 @@
-<div class="header"></div>
+<div class="header">
+  <a href="/home-screen">
+    <img src="assets/icons/back.png">
+  </a>
+</div>
 <div class="Registrar-screen">
   <div class="left">
     <img src="/assets/Logo.png" alt="Logo GPP">
@@ -48,14 +52,14 @@
         Já possui uma conta? <a href="/login">Fazer Login</a>
       </div>
       <!--<div class="line">
-        <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center">
+        <hr style="width:40%;text-align:center"> ou <hr style="width:40%;text-align:center"   >
       </div>-->
     </form>
   </div>
 </div>
 
 <div class = "modal-confirmacao" *ngIf="modal">
-  <h3>Insira o código que enviamos para {{user.email}}</h3>
+  <h3>Insira o código que enviamos para o seu email</h3>
   <form class="form-confirmacao" #form="ngForm" (submit)="confirma()">
     <input id="confirmation" name="confirmation" placeholder="Insira o código" type="text" [(ngModel)]="user.confirmation_code" required>
     <button type="submit" [disabled]="form.form.invalid">Enviar</button>

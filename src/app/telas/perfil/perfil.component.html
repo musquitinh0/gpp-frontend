@@ -1,5 +1,5 @@
 <body>
-    <div class="profile-card">
+    <div class="profile-card" (click)="desativaModal()">
         <div class="upper">
             <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120349559151919174/arrow-back-regular-24.png" (click)="logout()">
             <h2>Perfil</h2>
@@ -12,10 +12,10 @@
         <button class="edit-profile-btn" [routerLink]="['/edit-perfil']" >Editar Perfil</button>
     </div>
     <div class="meio">
-        <h3>Dispositivos:</h3>
+        <h3>Meus Dispositivos:</h3>
     </div>
     <div class="phones-content"> 
-        <h5 *ngIf="user.phones.length== 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
+        <h5 *ngIf="user.phones.length == 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         <ul *ngIf="user.phones.length> 0" style="width: 100%;">
             <li *ngFor="let phone of phones" (click)="ativaModal(phone)" class="Dispositivos-container">
                 <h4>{{phone.model}}</h4>
@@ -24,11 +24,21 @@
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
     </div>
+    <div class="meio">
+        <h3>Dispositivos Perdidos</h3>
+    </div>
+    <div class="phones-content"> 
+        <h5 *ngIf="user.lostPhones.length == 0"> Nenhum dispositivo perdido!</h5>
+        <ul *ngIf="user.lostPhones.length > 0" style="width: 100%;">
+            <li *ngFor="let phone of lostPhones" (click)="ativaModalBO(phone)" class="Dispositivos-container">
+                <h4>{{phone.model}}</h4>
+                <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120354673082245171/chevron-right-regular-24.png">
+            </li>
+        </ul>
+    </div>
 </body>
 
 <div class="modal-dispositivo" *ngIf="modal">
-    <button (click)="desativaModal()" style="align-self: flex-end; width: 5%; background-color: rgb(255, 0, 0); border: none
-    ; border-radius: 5px;">x</button>
     <h1>{{phone1.model}}</h1>
     <h2>Numero: {{phone1.number1}}</h2>
     <h2>Imei: {{phone1.imei}}</h2>
@@ -38,3 +48,24 @@
     </div>
 </div>
 
+<div class="modal-dispositivo" *ngIf="modalBO">
+    <h1> Dispositivo Perdido!</h1>
+    
+    <h2>modelo: {{phone1.model}}</h2>
+    <h2>imei: {{phone1.imei}}</h2>
+
+    <div class="BO-container" *ngIf="!phone1.BOfeito" style="display: flex; flex-direction: column;">
+        <h3>Como fazer um BO online:</h3>
+        <ul style="width: 95%; margin-left: 15px; display: flex; flex-direction: column;">
+            <li>Acesse o site da Delegacia Virtual em qualquer dispositivo;</li>
+            <li>Selecione “Comunicar ocorrência”;</li>
+            <li>Escolha uma das ocorrências disponíveis;</li>
+            <li>Comece a triagem do boletim. Primeiro, informe o que foi furtado ou roubado;</li>
+            <li>Depois, insira o local. Além de escolher entre as opções da lista, o site exibe um formulário para preencher o endereço, a data e a hora do acontecimento;</li>
+            <li>Em seguida, preencha com informações pessoais;</li>
+            <li>Avance no formulário e digite todos os detalhes sobre o que aconteceu. Por fim, envie o boletim para a aprovação.</li>
+        </ul>
+        <button (click)="fazBO(phone1)" style="background-color: rgb(98, 255, 169); margin-top: 2%; border: none; border-radius: 15px; height: 25px;">BO realizado</button>
+    </div>
+
+</div>
