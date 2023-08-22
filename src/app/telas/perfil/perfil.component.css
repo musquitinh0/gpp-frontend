@@ -15,7 +15,7 @@ body{
 }
 
 .profile-card{
-    width: 100%;
+    width: 95%;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -85,12 +85,12 @@ body{
 
 .meio{
     justify-content: flex-start;
-    width: 100%;
+    width: 95%;
     padding-left: 5%
 }
 
 .phones-content{
-    width: 100%;
+    width: 95%;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 20px;

@@ -5,5 +5,6 @@ export class Profile {
     email!: string;
     full_name!: string;
     phones!: [];
+    lostPhones!: [];
     isPolicia!: boolean;
 }

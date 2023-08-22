@@ -16,6 +16,10 @@ export class PerfilComponent {
     {model: ' '}
   ]
 
+  lostPhones = [
+    {model: ' '}
+  ]
+
   phone1 = {
     model: '',
     imei: '',
@@ -44,10 +48,12 @@ export class PerfilComponent {
 
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
-      this.user = profile;
-      this.phones = this.user.phones;
       if(profile.isPolicia){
         this.router.navigate(['/policia']);
+      }else{
+        this.user = profile;
+        this.phones = this.user.phones;
+        this.lostPhones = this.user.lostPhones;
       }
     });
   }
