@@ -30,7 +30,16 @@
                     <button type="submit" [disabled]="form.form.invalid" class="confirm-button">OK</button>
                 </form>
             </div>
-            <!--Fazer lista dos dispositivos encontrados-->
+            <div class="lista">
+                <h4>Lista de Dispositivos Marcados como encontrados</h4>
+                <hr>
+                <h5 *ngIf="phonesFound.length == 0"> Nenhum dispositivo encontrado!</h5>
+                <ul *ngIf="phonesFound.length> 0" style="width: 100%;">
+                    <li *ngFor="let phone of phonesFound" class="Dispositivos-container">
+                        <h5>{{phone.model}}</h5>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="lista-container">
@@ -40,7 +49,7 @@
                 <h5 *ngIf="phones.length == 0"> Nenhum dispositivo Perdido!</h5>
                 <ul *ngIf="phones.length> 0" style="width: 100%;">
                     <li *ngFor="let phone of phones" class="Dispositivos-container">
-                        <h4>{{phone.model}}</h4>
+                        <h5>{{phone.model}}</h5>
                     </li>
                 </ul>
             </div>

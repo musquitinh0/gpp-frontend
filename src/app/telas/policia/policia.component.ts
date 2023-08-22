@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
 export class PoliciaComponent {
 
   phones =[
-    {model: 'Galaxy Z flip3'},
-    {model: 'Iphone 14 pro max'}
+    {model: ''}
+  ]
+
+  phonesFound=[
+    {model: ''}
   ]
 
   phone ={
@@ -30,8 +33,13 @@ export class PoliciaComponent {
 
   ngOnInit() {
     this.geralService.getLostPhones().subscribe(phones => {
-      //this.phones = phones;
+      this.phones = phones.phones;
     });
+
+    this.geralService.getFoundPhones().subscribe(phones => {
+      this.phonesFound = phones.phones;
+    });
+
   }
 
   async onSubmit() {

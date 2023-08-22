@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .header > a > img{
@@ -23,6 +24,7 @@
 
 .header > h1{
     margin: 0%;
+    font-family: 'MyFont';
 }
 
 .policia-page{
@@ -31,6 +33,9 @@
     display: flex;
 }
 
+.item{
+    margin-top: 5%;
+}
 .side-bar{
     width: 10%;
     background-color: rgba(0, 112, 192, 0.616);
@@ -110,4 +115,11 @@
 
 .lista{
     padding: 5%;
+}
+
+.Dispositivos-container{
+    margin: 2%;
+    box-shadow: 0 2px 8px #3333332c;
+    padding: 2%;
+    border-radius: 15px;
 }
