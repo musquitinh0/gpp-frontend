@@ -14,7 +14,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .header > a > img{
@@ -36,6 +35,7 @@
 .item{
     margin-top: 5%;
 }
+
 .side-bar{
     width: 10%;
     background-color: rgba(0, 112, 192, 0.616);
