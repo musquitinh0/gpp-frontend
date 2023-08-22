@@ -7,6 +7,22 @@
     background-color: rgba(0, 112, 192, 1);
     height: 10vh;
     width: 100vw;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+}
+
+.header > a{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 2%;
+}
+
+.header > a > img{
+    height: 60%;
+    filter: invert(100%);
 }
 
 .login-screen{
@@ -103,6 +119,11 @@
     border: none;
     border-radius: 8px;
     height: 50px;
+}
+
+.login-box > button:hover{
+    background-color: rgba(255, 220, 99, .7);
+    cursor: pointer;
 }
 
 .remember-me-container{

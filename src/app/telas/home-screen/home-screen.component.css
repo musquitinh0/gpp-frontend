@@ -115,6 +115,7 @@
 
 .register-btt:hover{
     background-color: rgba(0, 112, 192, .7);
+    cursor: pointer;
 }
 
 .login-btt{
@@ -131,6 +132,7 @@
 .login-btt:hover{
     background-color: rgba(0, 112, 192, .1);;
     border-color: rgba(0, 112, 192, .7);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px){
