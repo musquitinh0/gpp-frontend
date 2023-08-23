@@ -56,8 +56,6 @@ export class PerfilComponent {
       this.modalBO = false;
   }
 
-  
-
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
       if(profile.isPolicia){

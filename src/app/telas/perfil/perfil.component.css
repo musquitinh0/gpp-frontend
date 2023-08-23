@@ -162,6 +162,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.modal-dispositivo > img{
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+}
+
+.modal-dispositivo > img:hover{
+    cursor: pointer;
+}
+
 .modal-dispositivo > h1{
     margin: 2%;
     margin-bottom: 5%;
