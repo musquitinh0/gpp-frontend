@@ -33,11 +33,11 @@ export class PoliciaComponent {
 
   ngOnInit() {
     this.geralService.getLostPhones().subscribe(phones => {
-      this.phones = phones.phones;
+      this.phones = phones;
     });
 
     this.geralService.getFoundPhones().subscribe(phones => {
-      this.phonesFound = phones.phones;
+      this.phonesFound = phones;
     });
 
   }

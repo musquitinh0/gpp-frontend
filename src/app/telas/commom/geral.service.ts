@@ -36,8 +36,8 @@ export class GeralService {
     return result;
   }
 
-  async phoneBO(phone: any) {
-    const result = await this.http.post<any>(`${environment.api}/Phone/BO`, phone).toPromise();
+  async phoneBO(data: any) {
+    const result = await this.http.post<any>(`${environment.api}/Phone/report`, data).toPromise();
     return result;
   }
 
@@ -46,11 +46,11 @@ export class GeralService {
   }
 
   getLostPhones(){
-    return this.http.get<any>(`${environment.api}/phone/Losts`);
+    return this.http.get<any>(`${environment.api}/phone/losts`);
   }
 
   getFoundPhones(){
-    return this.http.get<any>(`${environment.api}/phone/Found`);
+    return this.http.get<any>(`${environment.api}/phone/founds`);
   }
 
 }

@@ -80,9 +80,17 @@ export class PerfilComponent {
     }
   }
 
+  idBO = ''
+  data = {
+    imei: '',
+    idBO: ''
+  }
+
   async fazBO(phone:any){
     try{
-      const result = await this.geralService.phoneBO(phone);
+      this.data.imei = this.phone1.imei;
+      this.data.idBO = this.idBO;
+      const result = await this.geralService.phoneBO(this.data);
       this.modalBO = false;
     } catch(error){
       console.log(error);
