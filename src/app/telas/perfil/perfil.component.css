@@ -219,7 +219,7 @@
     height: 40px;
     margin: 2%;
     border: none;
-    background-color: #3333332d;
+    background-color: #8d8b8b2d;
     border-radius: 15px;
     padding: 5px;
 }
@@ -227,7 +227,6 @@
 .BO-container > h3 {
     margin: 2%;
 }
-
 
 @media screen and (max-width: 800px){
 
@@ -271,6 +270,5 @@
     .modal-dispositivo{
         width: 90%;
     }
-
 
 }
