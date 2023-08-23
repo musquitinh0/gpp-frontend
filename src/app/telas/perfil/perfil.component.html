@@ -50,6 +50,7 @@
 
 
 <div class="modal-dispositivo" *ngIf="modal">
+    <img src ="/assets/icons/close.png" (click)="desativaModal()">
     <h1>{{phone1.model}}</h1>
     <h2>Numero: {{phone1.number1}}</h2>
     <h2>Imei: {{phone1.imei}}</h2>
@@ -60,6 +61,7 @@
 </div>
 
 <div class="modal-dispositivo" *ngIf="modalBO">
+    <img src ="/assets/icons/close.png" (click)="desativaModal()">
     <h1> Dispositivo Perdido!</h1>
     
     <h2>modelo: {{phone1.model}}</h2>
