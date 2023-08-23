@@ -41,14 +41,16 @@ export class GeralService {
     return result;
   }
 
-
-
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);
   }
 
   getLostPhones(){
     return this.http.get<any>(`${environment.api}/phone/Losts`);
+  }
+
+  getFoundPhones(){
+    return this.http.get<any>(`${environment.api}/phone/Found`);
   }
 
 }

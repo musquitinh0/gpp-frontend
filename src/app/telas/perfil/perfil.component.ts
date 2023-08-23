@@ -98,6 +98,7 @@ export class PerfilComponent {
       alert("telefone marcado como perdido");
       this.modal = false;
       location.reload();
+      this.modalBO = true;
     } catch (error) {
       console.log(error);
       alert(error);

@@ -1,42 +1,53 @@
-<body>
-    <div class="profile-card" (click)="desativaModal()">
-        <div class="upper">
-            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120349559151919174/arrow-back-regular-24.png" (click)="logout()">
-            <h2>Perfil</h2>
-            <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120350770445947010/bell-regular-24.png">
+<div class="header">
+    <h1>Perfil de usuário</h1>
+    <a href="/home-screen"><img src="/assets/icons/sair.png" title="Sair"></a>
+</div>
+
+<div class="profile-page">
+    <div class="side-bar">
+        <div class="profile-card">
+            <div class="image">
+                <img class="profile-img" src="/assets/icons/profile.png">
+            </div>
+            <h3 style="color: black; margin-top: 10%;">{{user.full_name}}</h3>
         </div>
-        <div class="image">
-            <img class="profile-img" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
+        <div class="item">
+            <a>Inicio</a>
+            <hr>
         </div>
-        <h3 style="color: black; margin-top: 2%;">{{user.full_name}}</h3>
-        <button class="edit-profile-btn" [routerLink]="['/edit-perfil']" >Editar Perfil</button>
+        <div class="item">
+            <a href="/edit-perfil">Editar Perfil</a>
+            <hr>
+        </div>
+        <div class="item">
+            <a>Configurações</a>
+            <hr>
+        </div>
     </div>
-    <div class="meio">
-        <h3>Meus Dispositivos:</h3>
-    </div>
-    <div class="phones-content"> 
+
+    <div class="phones-content">
+        <h2> Meus Dispositivos</h2>
         <h5 *ngIf="user.phones.length == 0"> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         <ul *ngIf="user.phones.length> 0" style="width: 100%;">
             <li *ngFor="let phone of phones" (click)="ativaModal(phone)" class="Dispositivos-container">
                 <h4>{{phone.model}}</h4>
-                <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120354673082245171/chevron-right-regular-24.png">
             </li>
         </ul>
         <button [routerLink]="['/adicionar-dispositivo']">Adicionar dispositivo</button>
     </div>
-    <div class="meio">
-        <h3>Dispositivos Perdidos</h3>
-    </div>
+
     <div class="phones-content"> 
+        <h2> Dispositivos Perdidos</h2>
         <h5 *ngIf="user.lostPhones.length == 0"> Nenhum dispositivo perdido!</h5>
         <ul *ngIf="user.lostPhones.length > 0" style="width: 100%;">
             <li *ngFor="let phone of lostPhones" (click)="ativaModalBO(phone)" class="Dispositivos-container">
                 <h4>{{phone.model}}</h4>
-                <img src="https://cdn.discordapp.com/attachments/301484159199870979/1120354673082245171/chevron-right-regular-24.png">
             </li>
         </ul>
     </div>
-</body>
+    
+</div>
+
 
 <div class="modal-dispositivo" *ngIf="modal">
     <h1>{{phone1.model}}</h1>
@@ -65,7 +76,7 @@
             <li>Em seguida, preencha com informações pessoais;</li>
             <li>Avance no formulário e digite todos os detalhes sobre o que aconteceu. Por fim, envie o boletim para a aprovação.</li>
         </ul>
-        <button (click)="fazBO(phone1)" style="background-color: rgb(98, 255, 169); margin-top: 2%; border: none; border-radius: 15px; height: 25px;">BO realizado</button>
+        <button (click)="fazBO(phone1)">BO realizado</button>
     </div>
 
 </div>

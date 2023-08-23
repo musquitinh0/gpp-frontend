@@ -23,12 +23,17 @@
 
 .header > h1{
     margin: 0%;
+    font-family: 'MyFont';
 }
 
 .policia-page{
     height: 90vh;
     width: 100%;
     display: flex;
+}
+
+.item{
+    margin-top: 5%;
 }
 
 .side-bar{
@@ -110,4 +115,11 @@
 
 .lista{
     padding: 5%;
+}
+
+.Dispositivos-container{
+    margin: 2%;
+    box-shadow: 0 2px 8px #3333332c;
+    padding: 2%;
+    border-radius: 15px;
 }
