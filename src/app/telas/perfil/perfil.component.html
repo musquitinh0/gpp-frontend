@@ -62,10 +62,10 @@
 
 <div class="modal-dispositivo" *ngIf="modalBO">
     <img src ="/assets/icons/close.png" (click)="desativaModal()">
-    <h1> Dispositivo Perdido!</h1>
+    <h2> Dispositivo Perdido!</h2>
     
-    <h2>modelo: {{phone1.model}}</h2>
-    <h2>imei: {{phone1.imei}}</h2>
+    <h3>modelo: {{phone1.model}}</h3>
+    <h3>imei: {{phone1.imei}}</h3>
 
     <div class="BO-container" *ngIf="!phone1.BOfeito" style="display: flex; flex-direction: column;">
         <h3>Como fazer um BO online:</h3>
