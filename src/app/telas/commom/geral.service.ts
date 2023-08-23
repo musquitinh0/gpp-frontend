@@ -46,8 +46,6 @@ export class GeralService {
     return result;
   }
 
-  
-
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);
   }

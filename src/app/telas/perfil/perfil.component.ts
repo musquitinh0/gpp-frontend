@@ -92,6 +92,7 @@ export class PerfilComponent {
       this.data.idBO = this.idBO;
       const result = await this.geralService.phoneBO(this.data);
       this.modalBO = false;
+      alert("boletim de ocorrencia registrado com sucesso")
     } catch(error){
       console.log(error);
       alert(error);
