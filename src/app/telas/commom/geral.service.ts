@@ -37,9 +37,16 @@ export class GeralService {
   }
 
   async phoneBO(data: any) {
-    const result = await this.http.post<any>(`${environment.api}/Phone/report`, data).toPromise();
+    const result = await this.http.post<any>(`${environment.api}/phone/report`, data).toPromise();
     return result;
   }
+
+  async corpoDeDelito(data: any) {
+    const result = await this.http.post<any>(`${environment.api}/phone/delicti`, data).toPromise();
+    return result;
+  }
+
+  
 
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);

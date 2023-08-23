@@ -22,6 +22,15 @@ export class PoliciaComponent {
     imei: ''
    }
 
+   phone1 = {
+    model: '',
+    imei: '',
+    number1: '',
+    BOfeito: ''
+  }
+
+   modal = false;
+
   constructor(
     private geralService: GeralService,
     private router: Router
@@ -49,6 +58,31 @@ export class PoliciaComponent {
       console.log(result);
     } catch (error) {
       alert("imei não encontrado na base de dados");
+    }
+  }
+
+  ativaModal(phone:any){
+    this.phone1 = phone;
+    this.modal = true;
+  }
+
+  desativaModal(){
+    if(this.modal)
+      this.modal = false;
+  }
+
+  erro = {
+    error: ''
+  }
+  async solicitaCorpoDeDelito(phone:any){
+    try{
+      const result = await this.geralService.corpoDeDelito(phone);
+      this.modal = false;
+      alert("corpo de delito solicitado com sucesso");
+    } catch(error:any){
+      const tipoError = await error.error;
+      console.log(error);
+      alert(tipoError);
     }
   }
 

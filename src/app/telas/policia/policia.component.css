@@ -123,3 +123,54 @@
     padding: 2%;
     border-radius: 15px;
 }
+
+.modal-dispositivo{
+    display: flex;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    position: absolute;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border-radius: 15px;
+    left: 50%;
+    top: 50%;
+    padding: 2%;
+    width: 40%;
+    box-shadow: 0 2px 8px #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modal-dispositivo > img{
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+}
+
+.modal-dispositivo > img:hover{
+    cursor: pointer;
+}
+
+.modal-dispositivo > h1{
+    margin: 2%;
+    margin-bottom: 5%;
+}
+
+.modal-dispositivo > h2{
+    align-self: left;
+    margin: 2%;
+}
+
+.modal-dispositivo > button{
+    color: #000000;
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+    margin-top: 6%;
+    margin: 6px;
+}
+
+.modal-dispositivo > button:hover{
+    cursor: pointer;
+}
