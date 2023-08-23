@@ -123,6 +123,12 @@
     padding: 8px;
     border: none;
     margin-top: 5%;
+    
+}
+
+.phones-content > button:hover{
+    cursor: pointer;
+    background-color: rgba(98, 255, 169, .7);
 }
 
 .phones-content > ul{
