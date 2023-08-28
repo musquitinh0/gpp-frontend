@@ -23,7 +23,12 @@ export class AuthInterceptor implements HttpInterceptor {
       });
     }
 
-    return next.handle(request)
+    let request1: HttpRequest<any> = req;
+    request1 = request.clone({
+      headers: req.headers.set('ngrok-skip-browser-warning', `69420`)
+    });
+
+    return next.handle(request1)
       .pipe(
         catchError(this.handleError)
       );
