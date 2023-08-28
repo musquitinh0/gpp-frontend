@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
 
-  api: 'https://musquitinho.pythonanywhere.com/api'
+  api: 'https://f054-177-70-177-23.ngrok-free.app/'
 };
