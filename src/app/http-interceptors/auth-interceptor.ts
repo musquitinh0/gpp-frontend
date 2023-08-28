@@ -19,16 +19,12 @@ export class AuthInterceptor implements HttpInterceptor {
     if (token && !this.accountService.isTokenExpired(token)) {
       
       request = req.clone({
-        headers: req.headers.set('Authorization', `Bearer ${token}`)
+        headers: req.headers.set('Authorization', `Bearer ${token}`).set('ngrok-skip-browser-warning', `69420`)
+
       });
     }
 
-    let request1: HttpRequest<any> = req;
-    request1 = request.clone({
-      headers: req.headers.set('ngrok-skip-browser-warning', `69420`)
-    });
-
-    return next.handle(request1)
+    return next.handle(request)
       .pipe(
         catchError(this.handleError)
       );
